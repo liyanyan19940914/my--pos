@@ -37,6 +37,6 @@ class CartItem{
     }
 
     return cartItems;
-}
+    }
 }
 module.exports=CartItem;
