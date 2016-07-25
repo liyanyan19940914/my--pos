@@ -1,5 +1,3 @@
-const fixture = require('./fixtures');
-const loadPromotions = fixture.loadPromotions;
 const CartItem=require('./models/cart-item.js');
 const ReceiptItem=require('./models/receipt-item.js');
 const Receipt=require('./models/receipt.js');
