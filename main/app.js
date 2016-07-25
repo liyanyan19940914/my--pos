@@ -4,12 +4,12 @@ const CartItem=require('./models/cart-item.js');
 const ReceiptItem=require('./models/receipt-item.js');
 const Receipt=require('./models/receipt.js');
 const Item=require('./models/item.js');
+const Promotion=require('./models/promotion.js');
 function printReceipt(tags) {
 
     const cartItems = buildCartItems(tags, Item.all());
 
-    const allPromotions = loadPromotions();
-    const receiptItems = buildReceiptItems(cartItems, allPromotions);
+    const receiptItems = buildReceiptItems(cartItems, Promotion.all());
 
     const receipt = buildReceipt(receiptItems);
 
