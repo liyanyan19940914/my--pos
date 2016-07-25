@@ -3,6 +3,7 @@ const loadAllItems = fixture.loadAllItems;
 const loadPromotions = fixture.loadPromotions;
 const CartItem=require('./models/cart-item.js');
 const ReceiptItem=require('./models/receipt-item.js');
+const Receipt=require('./models/receipt.js');
 function printReceipt(tags) {
 
     const allItems = loadAllItems();
@@ -83,7 +84,7 @@ function buildReceipt(receiptItems) {
         savedTotal += receiptItem.saved;
     }
 
-    return {receiptItems, total, savedTotal}
+    return new Receipt(receiptItems, total, savedTotal);
 }
 
 function buildReceiptText(receipt) {
